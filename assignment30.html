@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome or Not</title>
+    <script src="https://kit.fontawesome.com/1a61482e4b.js" crossorigin="anonymous"></script>
+    <style>
+        /* Main Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Main Content Container */
+        div {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Input Fields */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        /* Read-only Field Styling */
+        input[type="text"]:readonly {
+            background-color: #e9ecef;
+        }
+
+        /* Button Styling */
+        button {
+            width: 50%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Button Hover Effect */
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Button Active State */
+        button:active {
+            background-color: #3e8e41;
+        }
+
+        /* Display Area */
+        #display {
+            padding: 20px;
+            width: 90%;
+            text-align: center;
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            background-color: #222;
+            padding: 20px;
+            color: #fff;
+            font-size: 0.9rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .footer span {
+            font-weight: bold;
+            color: #00aced;
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin-top: 10px; /* Space above icons */
+    background-color: transparent; /* Ensure transparency */
+    width: 100%; /* Ensure the container spans full width */
+}
+
+
+        .social-icon {
+            color: #B3B3B3; /* Default icon color */
+            font-size: 24px; /* Icon size */
+            text-decoration: none; /* Remove underline */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .social-icon:hover {
+            color: #1DB954; /* Change color on hover */
+        }
+
+        /* Optional: individual icon colors on hover */
+        .social-icon.github:hover {
+            color: #4078c0; /* GitHub color */
+        }
+
+        .social-icon.instagram:hover {
+            color: #e1306c; /* Instagram color */
+        }
+
+        .social-icon.linkedin:hover {
+            color: #0077b5; /* LinkedIn color */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Palindrome or Not</h1>
+        <input type="text" id="input" placeholder="Enter text">
+        <input type="text" id="display" placeholder="Is Palindrome / Not Palindrome" readonly>
+        <button id="button">CHECK</button>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024. Designed and developed by <span>Sajid SMS</span></p>
+        <p id="Connect">Connect With ME....</p>
+        <div class="social-icons">
+            <a href="https://github.com/sajidsms" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/sajid_sms" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/mohamed-sajid-887aa8247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("button").onclick = function() {
+            const inputText = document.getElementById("input").value;
+            const reversedText = inputText.split('').reverse().join('');
+            const isPalindrome = inputText === reversedText;
+            document.getElementById("display").value = isPalindrome ? "Is Palindrome" : "Not Palindrome";
+        };
+    </script>
+</body>
+</html>
